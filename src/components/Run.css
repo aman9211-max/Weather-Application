@@ -1,0 +1,21 @@
+.run{
+    display: flex;
+    justify-content: center;
+}
+
+.run>ol{
+    color: white;
+    text-align: left;
+    background: rgba(159, 159, 159, 0.241);
+    padding: 2rem;
+    width: 80%;
+    border-radius: 2.5rem;
+    box-shadow: 15px 15px 15px rgb(89, 88, 88);
+}
+
+.run>ol>li{
+    gap: 1rem;
+    line-height: 1.5rem;
+    margin: 1rem;
+    
+}

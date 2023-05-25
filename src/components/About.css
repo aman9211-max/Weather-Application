@@ -1,0 +1,14 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    width: 80%;
+    padding: 1rem;
+    background: rgba(159, 159, 159, 0.241);
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px rgb(89, 88, 88);
+}

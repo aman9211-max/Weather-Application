@@ -1,0 +1,26 @@
+.contact{
+    color: white;
+    gap: 1rem;
+    display: flex; 
+    flex-direction: column;   
+    margin: 2rem 4rem;
+    background: rgba(159, 159, 159, 0.241);
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px rgb(89, 88, 88);
+}
+
+h1{
+    margin: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration:underline;
+}
+h2{
+    font-size: 2rem;
+}
+
+@media screen and (max-width:768px) {
+    .contact{
+        margin: 2rem 1rem;
+    }
+}
