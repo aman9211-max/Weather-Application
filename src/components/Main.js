@@ -15,11 +15,13 @@ import sun from "../assets/sun.svg";
 import cloud from "../assets/cloud.png";
 import snow from "../assets/snow.svg";
 import rain from "../assets/rain.png";
-import search from "../assets/search-icon.png"; 
+import search from "../assets/search-icon.png";
+import LoadingSpinner from "./Spinner"; 
 
 
 const Main = () => {
-  const [icon, setIcon] = useState(sun)  
+  const [icon, setIcon] = useState(sun);
+  const [loading, SetLoading] = useState(false);  
   const weekday = [
     "Sunday",
     "Monday",
@@ -51,12 +53,14 @@ const Main = () => {
 
   const [data, setData] = useState({});
 
-  const getWeather = (location) => {
-    axios
+  const getWeather = async (location) => {
+    SetLoading(true)
+    await axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=e59faf165fe3cd7d81345203cfc8baf6`
       )
       .then((res) => {
+        SetLoading(false)
         setData(res.data);
         motionf();
         setRet(true);
@@ -81,6 +85,7 @@ const Main = () => {
       .catch((err) => {
         console.log("err", err);
         setRet(false);
+        SetLoading(false)
       });
   };
 
@@ -103,7 +108,7 @@ const Main = () => {
             placeholder="Enter Location"
             className="w-4/5 m-1 border-none"
           ></input>
-          <button className="btn rounded-3xl p-2 w-1/5 flex" onClick={handleSearch} placeholder="Search">
+          <button className="btn rounded-3xl p-2 w-1/5 flex" onClick={handleSearch} placeholder="Search" disabled={loading}>
             <p>Search</p>
             <img src={search} alt="" className="w-6" style={{filter:"invert(1)"}} />
           </button>
@@ -154,8 +159,7 @@ const Main = () => {
               exit={{ opacity: 0, x: 100 }}
               transition={transition}
             >
-              Temperature :{" "}
-              {ret ? (data?.main?.temp - 273.15).toFixed(2) : "Not Found"} °C
+              Temperature : {loading? <LoadingSpinner/>:(ret ? (data?.main?.temp - 273.15).toFixed(2) : "Not Found")} °C
             </motion.p>
           </div>
           <div className="other-info">
