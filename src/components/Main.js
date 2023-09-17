@@ -15,13 +15,12 @@ import sun from "../assets/sun.svg";
 import cloud from "../assets/cloud.png";
 import snow from "../assets/snow.svg";
 import rain from "../assets/rain.png";
-import search from "../assets/search-icon.png";
+import search from "../assets/search-icon.png"; 
 import LoadingSpinner from "./Spinner"; 
 
-
 const Main = () => {
-  const [icon, setIcon] = useState(sun);
-  const [loading, SetLoading] = useState(false);  
+  const [icon, setIcon] = useState(sun)  
+  const [loading, SetLoading] = useState(false);
   const weekday = [
     "Sunday",
     "Monday",
@@ -159,7 +158,8 @@ const Main = () => {
               exit={{ opacity: 0, x: 100 }}
               transition={transition}
             >
-              Temperature : {loading? <LoadingSpinner/>:(ret ? (data?.main?.temp - 273.15).toFixed(2) : "Not Found")} °C
+              Temperature :{" "}
+              {loading? <LoadingSpinner/>:(ret ? (data?.main?.temp - 273.15).toFixed(2) : "Not Found")} °C
             </motion.p>
           </div>
           <div className="other-info">
@@ -219,3 +219,4 @@ const Main = () => {
 };
 
 export default Main;
+

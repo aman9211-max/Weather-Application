@@ -17,12 +17,11 @@ function App() {
       <Navbar></Navbar> 
       <Router>
         <Routes>
+        <Route exact path='/Weather-App' element={< Main />}></Route>  
         <Route exact path='/' element={< Main />}></Route>  
         <Route exact path='/contact' element={< Contact />}></Route>
         <Route exact path='/run' element={< Run />}></Route>
         <Route exact path='/about' element={< About />}></Route>  
-        {/* <Main></Main>
-        <Run></Run> */}
         </Routes>
       </Router>
     </div>
