@@ -13,7 +13,7 @@ const Contact = () => {
           exit={{ opacity: 0, x: 100 }}
           transition={transition}
         >
-          <b>Made By:</b> Tarun Singh Tanwar
+          <b>Made By:</b> Aman Kumar Singh
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, x: -100 }}
@@ -21,7 +21,7 @@ const Contact = () => {
           exit={{ opacity: 0, x: 100 }}
           transition={transition}
         >
-          <b>Phone Number:</b> +91 8285502242
+          <b>Phone Number:</b> +91 9999111016
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, x: -100 }}
@@ -29,7 +29,7 @@ const Contact = () => {
           exit={{ opacity: 0, x: 100 }}
           transition={transition}
         >
-          <b>E-mail:</b> tarun.tanwar.ug20@nsut.ac.in
+          <b>E-mail:</b> amankumar.ug20@nsut.ac.in
         </motion.h2>
         <motion.h2
           initial={{ opacity: 0, x: -100 }}
@@ -45,7 +45,7 @@ const Contact = () => {
           exit={{ opacity: 0, x: 100 }}
           transition={transition}
         >
-          Made for: GlazTower
+          Made for: Weather
         </motion.h1>
       </div>
     </div>
